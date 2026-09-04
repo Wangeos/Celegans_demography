@@ -1,0 +1,10 @@
+genotypename: scripts/01.filtering/2.hard_filtered/05.f_missing0.10/output/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.hawaii_g.ped
+snpname: scripts/01.filtering/2.hard_filtered/05.f_missing0.10/output/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.hawaii_g.map
+indivname: scripts/01.filtering/2.hard_filtered/05.f_missing0.10/output/hawaii_group/output/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.hawaii_g.ped
+evecoutname: output/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.hawaii_g.evec
+evaloutname: output/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.hawaii_g.eval
+numoutevec: 50
+numoutlieriter: 0
+altnormstyle: NO
+grmoutname: output/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.hawaii_g.grm
+familynames: NO
