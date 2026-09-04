@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=awk    # Job name
 #SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=s2565306@ed.ac.uk  # Where to send mail
+#SBATCH --mail-user=[email_address]  # Where to send mail
 #SBATCH --ntasks=1                    # Run on a single CPU
 #SBATCH --array=1-7                    # Set array jobs
 #SBATCH --output=awk_%j.log   # Standard output and error log

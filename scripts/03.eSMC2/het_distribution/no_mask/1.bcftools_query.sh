@@ -3,7 +3,7 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --job-name=bcftools_query    # Job name
 #SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=s2565306@ed.ac.uk  # Where to send mail
+#SBATCH --mail-user=[email_address]  # Where to send mail
 #SBATCH --ntasks=4                    # Run on a single core
 #SBATCH --array=1-4                    # Set array jobs; delete this line if it is not an array job
 #SBATCH --output=bcftools_query_%j.log   # Standard output and error log
