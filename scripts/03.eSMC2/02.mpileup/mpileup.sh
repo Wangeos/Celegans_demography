@@ -6,6 +6,9 @@
 #SBATCH --array=1-20                    # Set array jobs
 #SBATCH --output=mpileup_%j.log   # Standard output and error log
 
+# `bamCaller.py` available at https://github.com/stschiff/msmc-tools/blob/master/bamCaller.py [Accessed 17-09-2026]
+# `utils.py` available at https://github.com/stschiff/msmc-tools/blob/master/utils.py [Accessed 17-09-2026]
+
 VAR1=$(ls -F ~/raw_cae/Celegans/CaeNDR/20231213/bam/hawaii_g/ | grep ".bai" | sed -n ${SLURM_ARRAY_TASK_ID}p)
 
 mkdir -p output/${VAR1%.bam.bai}/

@@ -1,0 +1,11 @@
+genotypename: scripts/01.filtering/2.hard_filtered/04.missing_array/output/0.10/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.ped
+snpname: scripts/01.filtering/2.hard_filtered/04.missing_array/output/0.10/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.map
+indivname: scripts/01.filtering/2.hard_filtered/04.missing_array/output/0.10/WI.20231213.hard-filter.isotype.rename_chrs.sample_sorted.missing_0.10.ped
+evecoutname: output/missingmode.pca.evec
+evaloutname: output/missingmode.pca.eval
+numoutevec: 50
+numoutlieriter: 0
+altnormstyle: NO
+grmoutname: output/missingmode.pca.grm
+familynames: NO
+missingmode: YES

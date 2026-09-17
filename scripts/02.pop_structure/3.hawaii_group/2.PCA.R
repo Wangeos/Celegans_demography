@@ -224,11 +224,45 @@ pdf("plots/PCA_hawaii_3K_ell.pdf", height = 8*(sqrt(5)-1)/2, width = 8)
 plot_PC12_hawaii_g_ellipse
 dev.off()
 
+# Use more informative names for sampling locations
+loc_rename <- c(
+  "Big Island1" = "Kalopa (BI1)",
+  "Big Island2" = "Kipukapuaulu 1 (BI2)",
+  "Big Island3" = "Kipukapuaulu 2 (BI3)",
+  "Big Island4" = "Manuka (BI4)",
+  "Big Island5" = "Kaloko (BI5)",
+  "Big Island6" = "Volcano 1 (BI6)",
+  "Big Island7" = "Volcano 2 (BI7)",
+  "Maui3" = "Maui (Maui3)"
+)
 
-plot_PC12_hawaii_g_ellipse_poster2 <- plot_PC12_hawaii_g_ellipse_poster+
-  theme(legend.position = c(0.85,0.35))
-plot_PC12_hawaii_g_ellipse_poster2
-ggsave("plots/PCA_hawaii_3K_ell_poster2.pdf", height = 8*(sqrt(5)-1)/2, width = 6, dpi = 300)
+plot_PC12_hawaii_g_ellipse_rename <- ggplot(df_pcs_geo_loc_new_supple) +
+  geom_mark_ellipse(aes(x=PC1, y=PC2,
+                        fill = collection_cluster_3km), 
+                    alpha = 0.3,linetype=0)+
+  scale_fill_brewer("Sampling locations", palette = "Set2", labels = loc_rename)+
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2))+
+  new_scale_fill() + 
+  geom_point(size=2, alpha=0.8, aes(x=PC1, y=PC2, fill=origin_hawaii, shape=origin_lee)) +
+  scale_fill_manual(values = cols_hawaii,
+                    breaks = c("Africa","Asia","Atlantic","Australia",
+                               "Europe","N. America","New Zealand","S. America",
+                               "Kauai","Oahu","Molokai","Maui","Big Island",
+                               "Unknown")) +
+  scale_shape_manual(values = shapes_new) +
+  theme_bw() +
+  theme(axis.title = element_text(size=11, color = "black"), 
+        axis.text = element_text(size=10, color = "black"),
+        legend.position = "right",
+        legend.title = element_blank(),
+        panel.grid = element_blank())+
+  labs(x=paste0("PC1 (",round(eval$Proportion[1]*100,digits=2),"%)"), 
+       y=paste0("PC2 (",round(eval$Proportion[2]*100,digits=2),"%)"))+
+  guides(fill= guide_legend(override.aes = list(shape=21),ncol=1))
+plot_PC12_hawaii_g_ellipse_rename
+ggsave("plots/PCA_hawaii_3K_ell_renamed.pdf", height = 8*(sqrt(5)-1)/2, width = 8)
+
 
 plot_PC12_hawaii_g_ellipse_lab <- plot_PC12_hawaii_g_ellipse+
   geom_text_repel(data = df_pcs_geo_loc_new_supple,
